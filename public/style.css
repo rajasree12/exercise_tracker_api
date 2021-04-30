@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+  
+}
+
+body {
+  font-size: 1.5em;
+  line-height: 1.6;
+  font-weight: 400;
+  font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 25px;
+  color: #222;
+  background-color: #8c8c8c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  background-image : url("https://static01.nyt.com/images/2020/03/10/well/physed-immune1/physed-immune1-superJumbo.jpg");
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-size: cover;
+}
+
+h1, h2, h3, h4 {
+  font-weight: bold;  
+}
+
+p {
+  max-width: 900px;
+}
+
+form {
+  margin-bottom: 25px;
+  padding: 20px;
+  background-color: #cccccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  min-width: 400px;
+  border-radius: 15px;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+
+input {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  font-size: 16px;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+
+input[type=submit] {
+  font-size: 16px;
+  border-radius: 3px;
+  background-color: #808080;
+  border: 1px solid grey;
+  cursor: pointer;
+  min-width: 400px;
+  min-height: 40px;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+
+input[type=submit]:hover {
+  background-color: #999999;
+}
+
+input[type='text']{
+  min-width: 400px;
+  min-height: 40px;
+}
+
+p {
+  font-family: monospace;
+  font-size: 1.2em;
+  padding: 2px;
+  background-color: #cccccc;
+}

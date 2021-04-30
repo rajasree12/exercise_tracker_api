@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise Tracker</title>
+    <link rel="shortcut icon" href="https://images.macrumors.com/t/U6lhuS57vkQ5KOp0-6RS98TwvHY=/800x0/filters:quality(90)/article-new/2018/03/workout-app-250x250.jpg?lossy" type="image/x-icon"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <h1>EXERCISE TRACKER</h1>
+
+      <form action="/api/users" method="post">
+        <h3>Create User</h3>
+        <!--<p><code>POST /api/users</code></p>-->
+        <input id="uname" type="text" name="username" placeholder="username">
+        <input type="submit" value="Add">
+      </form>
+
+      <form id="exercise-form" method="post">
+        <h3>Create Session</h3>
+        <!--<p><code>POST /api/users/:_id/exercises</code></p>-->
+        <input id="uid" type="text" name=":_id" placeholder=":_id">
+        <input id="desc" type="text" name="description" placeholder="description*">
+        <input id="dur" type="text" name="duration" placeholder="duration* (mins.)">
+        <input id="dat" type="text" name="date" placeholder="date (yyyy-mm-dd)">
+        <input type="submit" value="Add">
+      </form>
+
+      <form action="/api/users" method="get">
+        <h3>User Catalogue</h3>
+        <!--<p><code>GET /api/users</code></p>-->
+        <input type="submit" value="View">
+      </form>
+
+      <form id="log-form" method="post">
+        <h3>User Session Catalogue</h3>
+        <!--<p><code>GET /api/users/:_id/logs?[&amp;from][&amp;to][&amp;limit]</code></p>-->
+        <input id="uid" type="text" name="_id" placeholder=":_id">
+        <input id="from" type="text" name="from" placeholder="from-date(yyyy-mm-dd)">
+        <input id="to" type="text" name="to" placeholder="to-date(yyyy-mm-dd)">
+        <input id="limit" type="text" name="limit" placeholder="number of records">
+        <input type="submit" value="View">
+      </form>
+
+      <p>
+        <strong>GET user's exercise log: </strong>
+        <code>GET /api/users/:_id/logs?[&amp;from][&amp;to][&amp;limit]</code>
+      </p>
+
+      <p><strong>[ ]</strong> = optional</p>
+      <p><strong>from, to</strong> = dates (yyyy-mm-dd); <strong>limit</strong> = number</p>
+
+    </div>
+
+    <script>
+
+      const exerciseForm = document.getElementById("exercise-form");
+
+      exerciseForm.addEventListener("submit", () => {
+        const userId = document.getElementById("uid").value;
+        exerciseForm.action = `/api/users/${userId}/exercises`;
+
+        exerciseForm.submit();
+      });
+
+      const logForm = document.getElementById("log-form");
+
+      logForm.addEventListener("submit", () => {
+        logForm.action = `/api/users/view`;
+
+        logForm.submit();
+      });
+
+    </script>
+
+  </body>
+
+</html>
